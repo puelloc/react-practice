@@ -1,0 +1,35 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border: 8px dashed #FF0000;
+    margin: 0 auto;
+    height: 90vh;
+    justify-content: center; /* Center content vertically */
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: 8px dashed #0000FF;
+    height: 20%;
+}
+
+.centered {
+    justify-content: center; /* Center the input div vertically */
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: 8px dashed #00FF00;
+    height: 80%;
+}
+
+.hidden {
+    display: none;
+}
