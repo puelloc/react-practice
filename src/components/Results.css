@@ -1,0 +1,14 @@
+.result-title {
+  border: 8px dashed #E69F00;
+  flex-grow: 0;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.results-view {
+  border: 8px dashed #D55E00;
+  flex-grow: 4;
+  width: 100%;
+  box-sizing: border-box;
+}

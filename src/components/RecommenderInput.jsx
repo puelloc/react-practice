@@ -18,4 +18,4 @@ const RecommenderInput = ({ onSearch }) => {
     )
 }
 
-export default RecommenderInput
+export default RecommenderInput;

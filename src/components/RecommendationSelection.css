@@ -1,0 +1,14 @@
+.recommendation-selection {
+  border: 8px dashed #56B4E9;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.recommendation-selection-view {
+  border: 8px dashed #0072B2;
+  padding: 0px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
