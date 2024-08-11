@@ -24,9 +24,9 @@ const sampleRecommendations= [
 const getListItems = (type, model) => {
   switch (type) {
     case Type.MODEL:
-      return model.map(item => item.name);
+      return model;
     case Type.COLUMN:
-      return sampleRecommendations.map(item => item.name);
+      return sampleRecommendations;
     default:
       console.log('Unsupported type');
       return [];
@@ -45,11 +45,10 @@ const Results = ({ type, model, recommendationResponse }) => {
       <div className="result-title"><ResultTitle type={type}/></div>
       <div className="results-container">
         <div className="recommendation-selection">
-          <RecommendationSelection ListItems= { getListItems(type, model) }/>
+          <RecommendationSelection ListItems= { getListItems(type, model) } type={type}/>
         </div>
         {true && (
           <div className="recommendation-view">
-              {console.log(dataModel)}
             <RecommendationView />
           </div>
         )}

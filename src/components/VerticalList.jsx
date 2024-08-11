@@ -1,13 +1,10 @@
-// src/components/VerticalList.jsx
 import { useState } from 'react';
 import VerticalListItem from './VerticalListItem';
 import './VerticalList.css';
 
-const VerticalList = ({ items }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
-
+const VerticalList = ({ items, selectedItem, onItemSelected }) => {
   const handleItemClick = (item) => {
-    setSelectedItem(item);
+    onItemSelected(item);
   };
 
   return (
@@ -15,9 +12,9 @@ const VerticalList = ({ items }) => {
       {items.map((item, index) => (
         <VerticalListItem
           key={index}
-          item={item}
-          isSelected={item === selectedItem}
-          onClick={() => handleItemClick(item)}
+          item={item.name}
+          isSelected={item === selectedItem} // Check if the item is selected
+          onClick={() => handleItemClick(item)} // Handle item click
         />
       ))}
     </div>
