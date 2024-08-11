@@ -1,19 +1,24 @@
-import React, { useState } from 'react'
 import { Button, Input } from '@chakra-ui/react'
+import { Type } from '../constants/Types';
 
-const RecommenderInput = ({ onSearch }) => {
-    const [text, setText] = useState('')
+const RecommenderInput = ({ onSubmit }) => {
+    const handleColumnClick = () => {
+        onSubmit(Type.COLUMN);
+    }
+
+    const handleModelClick = () => {
+        onSubmit(Type.MODEL);
+    }
 
     return (
         <div>
-            <Input
-                placeholder="Search"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-            />
-            <Button onClick={onSearch}>
-                Search
+            <Button onClick={handleColumnClick}>
+                Column
             </Button>
+            <Button onClick={handleModelClick}>
+                Model
+            </Button>
+
         </div>
     )
 }

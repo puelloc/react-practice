@@ -1,10 +1,11 @@
-import PropertySelection from './PropertySelection';
+import VerticalList from './VerticalList';
 import './RecommendationSelection.css';
 
-function RecommendationSelection() {
+
+const RecommendationSelection = ({ListItems}) => {
   return (
     <div className="recommendation-selection-view">
-      <PropertySelection/>
+        <VerticalList items={ListItems} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
-function ResultTitle() {
+const ResultTitle = ({ type }) => {
   return (
     <div>
-      Title
+      {type}
     </div>
   );
 }

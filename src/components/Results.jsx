@@ -4,27 +4,56 @@ import ResultTitle from './ResultTitle.jsx';
 import RecommendationSelection from './RecommendationSelection';
 import RecommendationView from './RecommendationView';
 import './Results.css';
+import { Type } from '../constants/Types';
 
-const Type = {
-  COLUMN: 'column',
-  MODEL: 'model'
+const sampleRecommendations= [
+    {
+        name: 'Property 1',
+        children: []
+    },
+    {
+        name: 'Property 2',
+        children: []
+    },
+    {
+        name: 'Property 3',
+        children: []
+    }
+];
+
+const getListItems = (type, model) => {
+  switch (type) {
+    case Type.MODEL:
+      return model.map(item => item.name);
+    case Type.COLUMN:
+      return sampleRecommendations.map(item => item.name);
+    default:
+      console.log('Unsupported type');
+      return [];
+  }
 };
 
-const Results = () => {
-  const [type, setType] = useState(null);
+
+const Results = ({ type, model, recommendationResponse }) => {
   const [name, setName] = useState('');
-  const [recommendations, setRecommendations] = useState({});
+  const propertyNames = Object.keys(sampleRecommendations);
+  const [dataModel, setDataModel] = useState(model);
+  const [recommendationApiResponse, setRecommendationApiResponse] = useState(recommendationResponse);
+
   return (
     <>
-        <div className="result-title"><ResultTitle/></div>
-        <div className="results-container">
-          <div className="recommendation-selection">
-            <RecommendationSelection />
-          </div>
+      <div className="result-title"><ResultTitle type={type}/></div>
+      <div className="results-container">
+        <div className="recommendation-selection">
+          <RecommendationSelection ListItems= { getListItems(type, model) }/>
+        </div>
+        {true && (
           <div className="recommendation-view">
+              {console.log(dataModel)}
             <RecommendationView />
           </div>
-        </div>
+        )}
+      </div>
     </>
   );
 }
